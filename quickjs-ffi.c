@@ -63,6 +63,7 @@ SOFTWARE.
 #define JS_NEW_SIZE_T(ctx, val) JS_NewInt32(ctx, (int32_t)(val))
 #define JS_PROP_SIZE_T_DEF(name, val) JS_PROP_INT32_DEF(name, (int32_t)(val), JS_PROP_CONFIGURABLE)
 #define C_SIZEOF_DEF(x) JS_PROP_INT32_DEF(STR(sizeof_##x), (int32_t)(sizeof(x)), JS_PROP_CONFIGURABLE)
+#define C_OFFSETOF_DEF(t, d) JS_PROP_INT32_DEF(STR(offsetof_##t##_##d), (int32_t)(offsetof(t, d)), JS_PROP_CONFIGURABLE)
 #define ffi_type_size_t ffi_type_uint32
 #elif SIZE_MAX == UINT64_MAX
 #define JS_TO_SIZE_T(ctx, pres, val) JS_ToInt64(ctx, (int64_t *)(pres), val)
@@ -637,7 +638,7 @@ static JSCFunctionListEntry funcs[] = {
     C_MACRO_INT_DEF(RTLD_LOCAL),
     C_MACRO_INT_DEF(RTLD_NODELETE),
     C_MACRO_INT_DEF(RTLD_NOLOAD),
-    C_MACRO_INT_DEF(RTLD_DEEPBIND),
+    //C_MACRO_INT_DEF(RTLD_DEEPBIND),
 #if defined(_GNU_SOURCE)
     C_MACRO_UINTPTR_T_DEF(RTLD_DEFAULT),
     C_MACRO_UINTPTR_T_DEF(RTLD_NEXT),
