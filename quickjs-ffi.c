@@ -622,8 +622,8 @@ static JSCFunctionListEntry funcs[] = {
     C_SIZEOF_DEF(uintptr_t),
     C_SIZEOF_DEF(int),
     C_SIZEOF_DEF(size_t),
-    C_MACRO_STRING_DEF(LIBC_SO),
-    C_MACRO_STRING_DEF(LIBM_SO),
+    //C_MACRO_STRING_DEF(LIBC_SO),
+    //C_MACRO_STRING_DEF(LIBM_SO),
     //
     // libdl
     //
