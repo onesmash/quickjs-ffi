@@ -25,7 +25,6 @@ SOFTWARE.
 #define _GNU_SOURCE
 #include <dlfcn.h>
 #include <ffi.h>
-#include <gnu/lib-names.h>
 #include <limits.h>
 #include <quickjs/quickjs-libc.h>
 #include <quickjs/quickjs.h>
